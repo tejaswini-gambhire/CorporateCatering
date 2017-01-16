@@ -10,6 +10,8 @@ class Company < ApplicationRecord
   #before_validation do
     #self.name = name.squish
   #end
+  
+  accepts_nested_attributes_for :employees
 
   before_validation :remove_spaces
 

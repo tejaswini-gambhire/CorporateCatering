@@ -23,13 +23,21 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :companies
+    #resources :companies
 
   end
   
+  resources :orders do
+    get 'listing', on: :collection
+    get 'place', on: :member
+  end
   
   resources :companies do
     resources :employees
+  end
+
+  resources :vendors do
+    resources :menu_items
   end
 
   #get '/vendors/locations', to: 'vendor#location'
